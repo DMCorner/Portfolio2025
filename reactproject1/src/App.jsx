@@ -23,49 +23,51 @@ const projects = [
 
 export default function Portfolio() {
     return (
-        <div className="min-h-screen bg-gray-100 p-8">
-            <div className="max-w-5xl mx-auto space-y-8">
-                <header className="text-center">
-                    <h1 className="text-4xl font-bold mb-2">Hi, I'm Jane Doe</h1>
-                    <p className="text-lg text-gray-600">Software Engineer | Full-Stack Developer | Tech Enthusiast</p>
-                    <div className="mt-4 flex justify-center space-x-4">
-                        <a href="mailto:jane.doe@example.com">
+        <div className="min-h-screen bg-blue-100 p-8">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+
+                {/* Left Column */}
+                <div className="md:w-1/3 text-right space-y-4">
+                    <h1 className="text-4xl font-bold">Daniel Corner</h1>
+                    <p className="text-lg text-gray-600">Software Engineer</p>
+                    <div className="mt-4 flex justify-end space-x-4">
+                        <a href="mailto:danielmichaelcorner@gmail.com">
                             <Mail className="w-6 h-6 text-gray-700 hover:text-blue-500" />
                         </a>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/DMCorner" target="_blank" rel="noopener noreferrer">
                             <Github className="w-6 h-6 text-gray-700 hover:text-blue-500" />
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/daniel-c-409128148/" target="_blank" rel="noopener noreferrer">
                             <Linkedin className="w-6 h-6 text-gray-700 hover:text-blue-500" />
                         </a>
                     </div>
-                </header>
+                </div>
 
-                <section>
-                    <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {projects.map((project) => (
-                            <Card key={project.title} className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-4">
-                                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-gray-600 mb-4">{project.description}</p>
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                        <Button variant="outline">View Project</Button>
-                                    </a>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </section>
+                {/* Right Column */}
+                <div className="md:w-2/3 space-y-10">
+                    <section>
+                        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+                        <div className="grid grid-cols-1 gap-6">
+                            {projects.map((project) => (
+                                <Card key={project.title} className="hover:shadow-lg transition-shadow">
+                                    <CardContent className="p-4">
+                                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                                        <p className="text-gray-600 mb-4">{project.description}</p>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </section>
 
-                <section>
-                    <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-                    <p className="text-gray-700">
-                        I'm a passionate software engineer with experience in building scalable web applications using modern
-                        technologies like React, Node.js, and TypeScript. I love solving complex problems and continuously learning
-                        new tools and frameworks.
-                    </p>
-                </section>
+                    <section>
+                        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+                        <p className="text-gray-700">
+                            I'm a passionate software engineer with experience in building scalable web applications using modern
+                            technologies like React, Node.js, and TypeScript. I love solving complex problems and continuously learning
+                            new tools and frameworks.
+                        </p>
+                    </section>
+                </div>
             </div>
         </div>
     );
